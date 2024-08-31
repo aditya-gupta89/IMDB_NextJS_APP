@@ -14,9 +14,9 @@ const DarkModeToggle = () => {
 
   if (!mounted) return null;
   return (
-    <div className="mx-6 text-xl cursor-pointer">{mounted && currentTheme==='dark'?
-      <MdLightMode onClick={() => setTheme("light")} /> :
-      <MdDarkMode onClick={() => setTheme("dark")} />}
+    <div className="mx-6  text-xl cursor-pointer">{mounted && currentTheme==='dark'?
+      <MdLightMode className=" hover:text-amber-400" onClick={() => setTheme("light")} /> :
+      <MdDarkMode className=" hover:text-amber-400" onClick={() => setTheme("dark")} />}
     </div>
   );
 };

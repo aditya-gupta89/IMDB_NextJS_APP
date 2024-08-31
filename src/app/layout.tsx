@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import {ThemeProvider as NextThemesProvider} from "next-themes";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
 
 import "./globals.css";
 import Header from "@/components/Header";
@@ -21,14 +21,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-      <NextThemesProvider attribute="class" defaultTheme="dark">
+        <NextThemesProvider attribute="class" defaultTheme="system">
+          <div className="text-gray-700 min-h-screen dark:text-gray-200 dark:bg-gray-700 transition-colors duration-300">
+            <Header />
+            <Navbar />
 
-        <Header/>
-        <Navbar/>
-        {children}
+            {children}
+          </div>
         </NextThemesProvider>
-        </body>
-
+      </body>
     </html>
   );
 }
