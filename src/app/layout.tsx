@@ -4,6 +4,7 @@ import {ThemeProvider as NextThemesProvider} from "next-themes";
 
 import "./globals.css";
 import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
       <NextThemesProvider attribute="class" defaultTheme="dark">
 
         <Header/>
+        <Navbar/>
         {children}
         </NextThemesProvider>
         </body>
