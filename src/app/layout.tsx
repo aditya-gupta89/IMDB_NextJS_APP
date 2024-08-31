@@ -5,6 +5,8 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 import "./globals.css";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,12 +24,16 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <NextThemesProvider attribute="class" defaultTheme="system">
+        <Suspense fallback={<Loading/>}>
           <div className="text-gray-700 min-h-screen dark:text-gray-200 dark:bg-gray-700 transition-colors duration-300">
+            
             <Header />
             <Navbar />
 
             {children}
           </div>
+          </Suspense>
+
         </NextThemesProvider>
       </body>
     </html>
