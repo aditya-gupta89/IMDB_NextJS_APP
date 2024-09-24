@@ -16,8 +16,10 @@ interface cardProps{
 const Card:React.FC<cardProps> = ({date,description,image,likes,id,title}) => {
   return (
     <div className='hover:animate-shadow-drop hover:z-10 z-0 relative border-slate-400 p-4 border flex flex-col gap-3'>
-      <Link href={`/movie/${id}`} >
-      <Image className='rounded-md' src={`https://image.tmdb.org/t/p/original/${image}`} width={300} height={500} alt='not found'/>
+      <Link className='w-full h-[75%]' style={{
+        
+      }} href={`/movie/${id}`} >
+      <Image  className='rounded-md w-full h-full' src={`https://image.tmdb.org/t/p/original/${image}`} width={300} height={500} alt='not found'/>
       </Link>
       <div className="flex flex-col">
         <p className='line-clamp-2'>
